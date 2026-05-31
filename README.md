@@ -10,7 +10,7 @@ This project provides MATLAB scripts to:
 - inspect telemetry-based opponent data
 - analyze target-tracking signals
 
-Main entry scripts are in `/tmp/workspace/dsignori00/autonoma/src`:
+Main entry scripts are in `src/`:
 - `OpponentComparison.m`
 - `LapTimeAnalysis.m`
 - `OpponentComparisonTelemetry.m`
@@ -26,14 +26,14 @@ Main entry scripts are in `/tmp/workspace/dsignori00/autonoma/src`:
 
 ## Repository structure
 
-- `/tmp/workspace/dsignori00/autonoma/Autonoma.prj` MATLAB project file
-- `/tmp/workspace/dsignori00/autonoma/src` analysis scripts
-- `/tmp/workspace/dsignori00/autonoma/src/func` helper functions
-- `/tmp/workspace/dsignori00/autonoma/src/constants` constants and plotting style
-- `/tmp/workspace/dsignori00/autonoma/src/databases` track database `.mat` files
-- `/tmp/workspace/dsignori00/autonoma/src/opponents/indexes.csv` opponent-name mapping
-- `/tmp/workspace/dsignori00/autonoma/bags` input logs folder (you may need to create it locally)
-- `/tmp/workspace/dsignori00/autonoma/src/mat` generated processed/best-lap data
+- `Autonoma.prj` MATLAB project file
+- `src/` analysis scripts
+- `src/func/` helper functions
+- `src/constants/` constants and plotting style
+- `src/databases/` track database `.mat` files
+- `src/opponents/indexes.csv` opponent-name mapping
+- `bags/` input logs folder (you may need to create it locally)
+- `src/mat/` generated processed/best-lap data
 
 ## Setup (startup as MATLAB project)
 
@@ -41,22 +41,23 @@ Main entry scripts are in `/tmp/workspace/dsignori00/autonoma/src`:
 2. Initialize submodules:
    - `git submodule update --init --recursive`
 3. Create the bags folder if it does not exist:
-   - `/tmp/workspace/dsignori00/autonoma/bags`
+   - `bags/`
 4. Open MATLAB and open the project:
    - double-click `Autonoma.prj`, or run:
-   - `openProject('/tmp/workspace/dsignori00/autonoma/Autonoma.prj')`
+   - `openProject('Autonoma.prj')` (from repository root), or
+   - `openProject('<path-to-repository>/Autonoma.prj')`
 
 Opening the project is important because scripts use `currentProject` (for example in `get_bags_path.m`) and rely on project paths.
 
 ## Input data
 
 Place simulator log `.mat` files in:
-- `/tmp/workspace/dsignori00/autonoma/bags`
+- `bags/`
 
 When you run scripts, file selectors (`uigetfile`) will ask you to choose logs.
 
 Opponent naming in `OpponentComparison.m` uses:
-- `/tmp/workspace/dsignori00/autonoma/src/opponents/indexes.csv`
+- `src/opponents/indexes.csv`
 
 If your bag name is not listed there, update that CSV accordingly.
 
