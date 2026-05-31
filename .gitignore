@@ -1,3 +1,10 @@
+/.vscode
+
+# Bags
+/bags/*
+/src/mat/*
+bags/.gitkeep
+
 # Autosave files
 *.asv
 *.m~
