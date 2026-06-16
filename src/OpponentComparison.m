@@ -160,7 +160,7 @@ best_laps = [];
 if ~ego_vs_ego
     [~, name, ~] = fileparts(opp_file);
     parts = split(name, "_");
-    filename = fullfile("mat", parts{1} + "_" + parts{4} + "_best_laps.mat");
+    filename = fullfile("src/mat/", parts{1} + "_" + parts{4} + "_best_laps.mat");
     if(~isfile(filename))
         best_laps = fit_best_laps(v2v, ego, opp_file, false, splitted_bag);
     else
